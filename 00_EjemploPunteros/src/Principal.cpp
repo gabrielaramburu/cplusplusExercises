@@ -7,16 +7,22 @@
 //============================================================================
 
 #include <iostream>
+#include <string>
+#include "Mascota.h"
+
 using namespace std;
 
 void ejemploPuntero();
 void ejemploPuntero_b();
 void ejemploPuntero_c();
+void ejemploPuntero_d();
 
 int main() {
-	ejemploPuntero();
-	ejemploPuntero_b();
-	ejemploPuntero_c();
+//	ejemploPuntero();
+//	ejemploPuntero_b();
+//	ejemploPuntero_c();
+
+	ejemploPuntero_d();
 	return 0;
 }
 
@@ -72,4 +78,47 @@ void ejemploPuntero_c() {
 	cout << endl;
 	cout << "firstvalue is " << firstvalue << '\n';
 	cout << "secondvalue is " << secondvalue << '\n';
+}
+
+void ejemploPuntero_d() {
+	//ejemplo de Referencias
+	Mascota m("Teo");
+
+	Mascota *aux1 = &m;
+
+	cout << endl;
+	cout << "Nombre mascota " << m.nombre;
+	cout << endl;
+	cout << "Nombre mascota " << aux1->nombre;
+
+	aux1->nombre = "TEO";
+	cout << endl;
+	cout << "Nombre mascota " << m.nombre;
+	cout << endl;
+	cout << "Nombre mascota " << aux1->nombre;
+
+	cout << "Dirección de momoria del objeto estático " << &m;
+
+
+	cout << endl << "********* " << endl;
+
+
+	cout << endl;
+
+	Mascota *m2 = new Mascota("Sultan");
+	cout << endl;
+	cout << "Dirección de momoria del objeto dinámico " << &m2;
+
+	//Observese como la asignación cambia,
+	//*aux3 = &m2 no funciona
+	Mascota *aux3 = m2;
+	Mascota *aux4 = m2;
+
+	aux3->nombre = "Zultan";
+	aux4->nombre = "ZULTAN";
+
+	cout << "Nombre mascota " << m2->nombre;
+
+
+
 }

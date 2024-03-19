@@ -12,14 +12,11 @@
 using namespace std;
 
 class Mascota {
-private:
-	string nombre;
-
 public:
+	string nombre;
 	Mascota();
 	Mascota(string nombre);
 	virtual ~Mascota();
-	string getNombre();
 };
 
 #endif /* MASCOTA_H_ */
