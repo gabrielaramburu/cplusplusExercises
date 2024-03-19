@@ -18,16 +18,16 @@ void ejemplo5();
 void ejercicio();
 
 int main() {
-	ejemplo1();
-	ejemplo2();
-	ejemplo3();
+	//ejemplo1();
+//	ejemplo2();
+//	ejemplo3();
 	ejemplo4();
 	ejemplo5();
 	return 0;
 }
 
 void ejemplo1() {
-	cout << endl << " *** 1 - Creano instancias de objetos dinámicos y estáticos y haciendo copia plana "
+	cout << endl << " *** 1 - Creando instancias de objetos dinámicos y estáticos y haciendo copia plana "
 			<< endl;
 	Coordenada c1(10, 40);
 	Coordenada c2(5, 7);
@@ -37,6 +37,7 @@ void ejemplo1() {
 
 	Coordenada c5 = c2; //c5 es una copia de c2
 	Coordenada *c6 = new Coordenada(c2);
+
 
 	cout << endl << " Coordenada c5: ";
 	c5.mostrar();

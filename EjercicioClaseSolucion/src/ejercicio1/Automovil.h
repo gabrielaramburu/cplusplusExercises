@@ -20,6 +20,7 @@ private:
 	int anioFabricacion;
 
 
+
 public:
 	static const int VELOCIDAD_MAX = 60;
 	//static : significa que es un miembro de la clase (no de los objetos)

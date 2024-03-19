@@ -11,6 +11,7 @@ int main() {
 	Automovil a3; //observar como estoy objetos se inicializan con basura
 	Automovil a4;
 
+
 	a1->mostrarInformacion();
 
 	a3.mostrarInformacion(); //muestra basura
@@ -31,5 +32,8 @@ int main() {
 	cout << a1->VELOCIDAD_MAX << endl;
 	cout << a2->VELOCIDAD_MAX << endl;
 	cout << a3.VELOCIDAD_MAX << endl;
+
+	delete a1;
+	delete a2;
 	return 0;
 }
