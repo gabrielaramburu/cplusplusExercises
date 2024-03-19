@@ -8,12 +8,12 @@ int main() {
 
 	//instanciando objetos de forma estática
 	Persona p1 ("Jose","Lopez",1234);
-	Persona p2 ("sdsd","sdsd",12121);
+	Persona p2 ("Laura","Martinez",12121);
 
 
 	//instanciando objetos de forma dinámica
 	Persona *p5 = new Persona("Juan","Garcia",4444);
-	Persona *p5 = new Persona("","pe",111);
+	Persona *p6 = new Persona("","pe",111);
 
 	Persona p3;
 	Persona p4;
