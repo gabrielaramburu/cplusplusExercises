@@ -21,7 +21,7 @@ public:
 	static int VALOR_COMUN;
 
 	Persona();
-	Persona(string nombre, string apellido, int cedule);
+	Persona(string nombre, string apellido, int cedula);
 	virtual ~Persona();
 
 	string getApellido() const;

@@ -8,10 +8,12 @@ int main() {
 
 	//instanciando objetos de forma estática
 	Persona p1 ("Jose","Lopez",1234);
-	Persona p2 ("Maria","Perez",104);
+	Persona p2 ("sdsd","sdsd",12121);
+
 
 	//instanciando objetos de forma dinámica
 	Persona *p5 = new Persona("Juan","Garcia",4444);
+	Persona *p5 = new Persona("","pe",111);
 
 	Persona p3;
 	Persona p4;
@@ -26,7 +28,6 @@ int main() {
 	cout << p5->darInformacionPersonal() << endl;
 
 	delete p5; //libero memoria del HEAP
-
 
 	return 0;
 }
