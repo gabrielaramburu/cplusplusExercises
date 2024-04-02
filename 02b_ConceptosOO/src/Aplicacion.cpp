@@ -19,6 +19,7 @@ void redefinirOperaciones();
 void poliformismo();
 void mostrarTamanio(Animal &a);
 void ejemploEnumaerado();
+void sobreCargaOperador();
 
 void poliformismo2();
 
@@ -31,6 +32,8 @@ int main() {
 	//poliformismo();
 	//poliformismo2();
 	ejemploEnumaerado();
+
+	sobreCargaOperador();
 }
 
 void asociacion(){
@@ -157,4 +160,15 @@ void ejemploEnumaerado() {
 
 	MesesVerano mes = diciembre;
 	cout << "Diciembre es el mes " << mes << endl; //muestra 12
+
+
+}
+
+
+void sobreCargaOperador() {
+	Molusco *m = new Molusco(444);
+	cout << m;
+
+	Molusco m2 (3434);
+	cout << &m2;
 }

@@ -34,3 +34,10 @@ Molusco::Molusco(int tam) {
 void Molusco::mostrarAlgoDelMolusco() {
 	cout << "Haciendo algo exclusivo de un molusco" << endl;
 }
+
+ostream& operator<<(ostream& os, Molusco* m)
+{
+	//sobre escribo el comportamiento del operador << para el molusco
+    os << "Molusco: "<<m->tamanio << '\n';
+    return os;
+}
