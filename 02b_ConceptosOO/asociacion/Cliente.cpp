@@ -28,6 +28,7 @@ Cliente::~Cliente() {
 
 void Cliente::agregarTransaccion(Transaccion &t) {
 	this->transacciones.push_front(t);
+
 }
 
 void Cliente::listarTransacciones() {

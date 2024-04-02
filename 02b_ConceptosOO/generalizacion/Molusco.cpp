@@ -31,3 +31,6 @@ Molusco::Molusco(int tam) {
 	this->tamanio = tam;
 }
 
+void Molusco::mostrarAlgoDelMolusco() {
+	cout << "Haciendo algo exclusivo de un molusco" << endl;
+}

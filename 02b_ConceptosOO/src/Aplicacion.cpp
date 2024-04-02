@@ -24,11 +24,11 @@ void poliformismo2();
 int main() {
 	//asociacion();
 	//generalizacion();
-	//intercambiabilidad();
+	intercambiabilidad();
 	//redefinirOperaciones();
 	//sobrecarga();
 	//poliformismo();
-	poliformismo2();
+	//poliformismo2();
 }
 
 void asociacion(){
@@ -49,8 +49,6 @@ void asociacion(){
 
 void generalizacion(){
 	cout << endl << "*** Ejemplo de generalizacion " << endl;
-	Animal a;
-
 
 	//observar que este valor se carga en un atributo heredado
 	Mamifero m1(100);
@@ -60,16 +58,26 @@ void generalizacion(){
 
 void intercambiabilidad() {
 	//Un objeto de una clase derivada es tambien un objeto de una clase base
+
 	//por lo tanto un objeto de la clase base puede ser substituido por un objeto
 	//de una clase derivada
 
 	//un molusco es un invertebrado
 	//un invertebrado es un animal
 
-	Invertebrado *a = new Molusco(99);
-	cout << "Un molusco es un invertebrado";
-	a->mostrarTamanio();
+	Invertebrado *a = new Molusco();
+	cout << "Un molusco es un invertebrado" << endl;
 
+	a->mostrarTamanio();
+	//aca estamos haciendo casting
+	//((Molusco)a).mostrarAlgoDelMolusco();
+	(dynamic_cast<Molusco*>(a))->mostrarAlgoDelMolusco();
+
+	//lo mismo que lo anteriro pero lo cargo a un puntero
+	//como paso previo
+	Molusco *mol;
+	mol = dynamic_cast<Molusco*>(a);
+	mol->mostrarAlgoDelMolusco();
 }
 
 void sobrecarga() {
@@ -91,7 +99,6 @@ void poliformismo() {
 	Animal *a1;
 	Animal *a2;
 
-
 	a1 = new Molusco(150);
 	a2 = new Mamifero(2000);
 
@@ -107,6 +114,7 @@ void mostrarTamanio(Animal &a) {
 	//gracias a que redefiní operaciones
 	//y al despacho dinámico, este código es flexible y genérico
 	a.mostrarTamanio();
+
 }
 
 void poliformismo2() {

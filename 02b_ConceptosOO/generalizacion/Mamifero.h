@@ -10,6 +10,8 @@
 #include "Vertebrado.h"
 
 class Mamifero : public Vertebrado{
+private:
+	int tiempoGestion;
 public:
 	Mamifero();
 	Mamifero(int tamanio);
