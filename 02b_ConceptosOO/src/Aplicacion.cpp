@@ -18,6 +18,7 @@ void sobrecarga();
 void redefinirOperaciones();
 void poliformismo();
 void mostrarTamanio(Animal &a);
+void ejemploEnumaerado();
 
 void poliformismo2();
 
@@ -29,6 +30,7 @@ int main() {
 	//sobrecarga();
 	//poliformismo();
 	//poliformismo2();
+	ejemploEnumaerado();
 }
 
 void asociacion(){
@@ -134,4 +136,25 @@ void poliformismo2() {
 	cout << endl;
 
 	f2->calcularArea(); //operacion polifórmica
+}
+
+void ejemploEnumaerado() {
+	//cada valor del enumerado se inicializa a partir de 0
+	enum DiasLaborales {
+		lunes, martes, miercoles, jueves, viernes
+	};
+
+	DiasLaborales dia = lunes;
+	cout << "Dia elegido " << dia << endl; //muestra 0
+
+	//puedo cambiar por defecto los valores de cada enumerado
+	enum MesesVerano {
+		diciembre = 12,
+		enero = 1,
+		febrero = 2,
+		marzo = 3
+	};
+
+	MesesVerano mes = diciembre;
+	cout << "Diciembre es el mes " << mes << endl; //muestra 12
 }
