@@ -28,3 +28,7 @@ float Triangulo::calcularArea() {
 	cout << " Area del Triángulo: " << to_string(area);
 	return area;
 }
+
+string Triangulo::toString(){
+	return "muestro triangulo";
+}

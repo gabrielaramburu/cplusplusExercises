@@ -26,6 +26,7 @@ public:
 	Cliente(int id, string nom, Cuenta c);
 	virtual ~Cliente();
 	void agregarTransaccion(Transaccion &t);
+	void agregarTransaccion2(Transaccion *t);
 	void listarTransacciones();
 
 };

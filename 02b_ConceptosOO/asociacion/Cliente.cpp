@@ -26,8 +26,14 @@ Cliente::~Cliente() {
 	// TODO Auto-generated destructor stub
 }
 
+//paramtro por referencia
 void Cliente::agregarTransaccion(Transaccion &t) {
 	this->transacciones.push_front(t);
+
+}
+//parámetro por puntero
+void Cliente::agregarTransaccion2(Transaccion *t) {
+	this->transacciones.push_front(*t);
 
 }
 

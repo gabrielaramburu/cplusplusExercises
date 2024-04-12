@@ -14,7 +14,7 @@ private:
 public:
 	Animal();
 	virtual ~Animal();
-	void virtual mostrarTamanio();
+	virtual void  mostrarTamanio();
 	void mostrarTamanio(bool completo);
 protected:
 	//atributos solo visibles en la jerarquía

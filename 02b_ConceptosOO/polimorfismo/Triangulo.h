@@ -15,6 +15,7 @@ public:
 	Triangulo();
 	virtual ~Triangulo();
 	float virtual calcularArea();
+	virtual string toString();
 };
 
 #endif /* TRIANGULO_H_ */

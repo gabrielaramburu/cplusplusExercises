@@ -26,3 +26,7 @@ float Rectangulo::calcularArea() {
 	return area;
 }
 
+string Rectangulo::toString() {
+	return "muestro rectángulo";
+}
+

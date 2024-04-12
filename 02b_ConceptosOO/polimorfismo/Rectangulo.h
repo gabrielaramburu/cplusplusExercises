@@ -15,6 +15,7 @@ public:
 	Rectangulo();
 	virtual ~Rectangulo();
 	float virtual calcularArea();
+	virtual string toString();
 };
 
 #endif /* RECTANGULO_H_ */

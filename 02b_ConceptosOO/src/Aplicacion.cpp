@@ -26,14 +26,14 @@ void poliformismo2();
 int main() {
 	//asociacion();
 	//generalizacion();
-	intercambiabilidad();
+	//intercambiabilidad();
 	//redefinirOperaciones();
 	//sobrecarga();
 	//poliformismo();
-	//poliformismo2();
-	ejemploEnumaerado();
+	poliformismo2();
+	//ejemploEnumaerado();
 
-	sobreCargaOperador();
+	//sobreCargaOperador();
 }
 
 void asociacion(){
@@ -44,10 +44,12 @@ void asociacion(){
 		Transaccion t2(102,"2024-01-02", 200.0);
 		Transaccion t3(103,"2024-01-03", 201.5);
 
+		Transaccion *t4 = new Transaccion(104,"2024-01-03", 201.5);
 
 		c1.agregarTransaccion(t1);
 		c1.agregarTransaccion(t2);
 		c1.agregarTransaccion(t3);
+		c1.agregarTransaccion2(t4);
 
 		c1.listarTransacciones();
 }
@@ -139,6 +141,22 @@ void poliformismo2() {
 	cout << endl;
 
 	f2->calcularArea(); //operacion polifórmica
+
+	//lista de puntero a objetos
+	list<Figura*> figuras;
+	Figura *fig1 = new Triangulo();
+	Figura *fig2 = new Rectangulo();
+	figuras.push_back(fig1);
+	figuras.push_back(fig2);
+
+	cout << endl << "muestro lista de figuras " << endl;
+	for (auto &ptr: figuras) {
+		cout << ptr->toString() << endl;
+	}
+
+
+
+
 }
 
 void ejemploEnumaerado() {
