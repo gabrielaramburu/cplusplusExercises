@@ -154,6 +154,11 @@ void poliformismo2() {
 		cout << ptr->toString() << endl;
 	}
 
+	//otra forma de recorrer lista
+	list<Figura*>::iterator it;
+	for (it = figuras.begin(); it != figuras.end(); ++it) {
+	        cout << ((*it)->toString()) << endl;
+	    }
 
 
 
