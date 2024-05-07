@@ -199,8 +199,8 @@ void sobreCargaOperador() {
 }
 
 void repasoConceptosBasicos() {
-	repaso_Intercambiabilidad();
-	repaso_sobreescritura();
+	//repaso_Intercambiabilidad();
+	//repaso_sobreescritura();
 	repaso_despachoDinamico();
 
 }

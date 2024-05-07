@@ -14,7 +14,7 @@ using namespace std;
 
 int main() {
 
-	ServicioA *serA = new ServicioA(); //creo instancia que implementa la interface
+	InterfaceA *serA = new ServicioA(); //creo instancia que implementa la interface
 
 	ClienteA *cli = new ClienteA(serA); //creo instancia del cliente
 	//le paso como parámetro del constructor una instancia del servicio
