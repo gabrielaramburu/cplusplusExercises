@@ -1,11 +1,13 @@
-
 #include <iostream>
+#include <list>
+#include <string>
 
 #include "../asociacion/Cliente.h"
 #include "../asociacion/Cuenta.h"
 #include "../asociacion/Transaccion.h"
-#include "../generalizacion/Mamifero.h"
+#include "../generalizacion/Gato.h"
 #include "../generalizacion/Molusco.h"
+#include "../generalizacion/Perro.h"
 #include "../polimorfismo/Rectangulo.h"
 #include "../polimorfismo/Triangulo.h"
 
@@ -23,6 +25,11 @@ void sobreCargaOperador();
 
 void poliformismo2();
 
+void repasoConceptosBasicos();
+void repaso_Intercambiabilidad();
+void repaso_sobreescritura();
+void repaso_despachoDinamico();
+
 int main() {
 	//asociacion();
 	//generalizacion();
@@ -30,31 +37,33 @@ int main() {
 	//redefinirOperaciones();
 	//sobrecarga();
 	//poliformismo();
-	poliformismo2();
+	//poliformismo2();
 	//ejemploEnumaerado();
 
 	//sobreCargaOperador();
+
+	repasoConceptosBasicos();
 }
 
-void asociacion(){
+void asociacion() {
 	cout << endl << "*** Ejemplo de asociación " << endl;
 	Cuenta cuenta;
-		Cliente c1 (1,"Pepe", cuenta);
-		Transaccion t1(101,"2024-01-01", 150.0);
-		Transaccion t2(102,"2024-01-02", 200.0);
-		Transaccion t3(103,"2024-01-03", 201.5);
+	Cliente c1(1, "Pepe", cuenta);
+	Transaccion t1(101, "2024-01-01", 150.0);
+	Transaccion t2(102, "2024-01-02", 200.0);
+	Transaccion t3(103, "2024-01-03", 201.5);
 
-		Transaccion *t4 = new Transaccion(104,"2024-01-03", 201.5);
+	Transaccion *t4 = new Transaccion(104, "2024-01-03", 201.5);
 
-		c1.agregarTransaccion(t1);
-		c1.agregarTransaccion(t2);
-		c1.agregarTransaccion(t3);
-		c1.agregarTransaccion2(t4);
+	c1.agregarTransaccion(t1);
+	c1.agregarTransaccion(t2);
+	c1.agregarTransaccion(t3);
+	c1.agregarTransaccion2(t4);
 
-		c1.listarTransacciones();
+	c1.listarTransacciones();
 }
 
-void generalizacion(){
+void generalizacion() {
 	cout << endl << "*** Ejemplo de generalizacion " << endl;
 
 	//observar que este valor se carga en un atributo heredado
@@ -150,17 +159,15 @@ void poliformismo2() {
 	figuras.push_back(fig2);
 
 	cout << endl << "muestro lista de figuras " << endl;
-	for (auto &ptr: figuras) {
+	for (auto &ptr : figuras) {
 		cout << ptr->toString() << endl;
 	}
 
 	//otra forma de recorrer lista
 	list<Figura*>::iterator it;
 	for (it = figuras.begin(); it != figuras.end(); ++it) {
-	        cout << ((*it)->toString()) << endl;
-	    }
-
-
+		cout << ((*it)->toString()) << endl;
+	}
 
 }
 
@@ -175,23 +182,79 @@ void ejemploEnumaerado() {
 
 	//puedo cambiar por defecto los valores de cada enumerado
 	enum MesesVerano {
-		diciembre = 12,
-		enero = 1,
-		febrero = 2,
-		marzo = 3
+		diciembre = 12, enero = 1, febrero = 2, marzo = 3
 	};
 
 	MesesVerano mes = diciembre;
 	cout << "Diciembre es el mes " << mes << endl; //muestra 12
 
-
 }
-
 
 void sobreCargaOperador() {
 	Molusco *m = new Molusco(444);
 	cout << m;
 
-	Molusco m2 (3434);
+	Molusco m2(3434);
 	cout << &m2;
 }
+
+void repasoConceptosBasicos() {
+	repaso_Intercambiabilidad();
+	repaso_sobreescritura();
+	repaso_despachoDinamico();
+
+}
+
+void repaso_Intercambiabilidad() {
+	cout << "** Intecambiabilidad " << endl;
+
+	Placentario *placentario;
+
+	placentario = new Perro();
+	placentario->emitirSonido();
+
+	placentario = new Gato();
+	placentario->emitirSonido();
+}
+
+void repaso_sobreescritura() {
+	cout << "** Sobre escritura " << endl;
+
+	Placentario *pla;
+
+	pla = new Placentario();
+	pla->emitirSonido(); //comportamiento de la clae base
+
+	pla = new Perro();
+	pla->emitirSonido(); //comportamiento de la clase derivada
+
+	pla = new Gato();
+	pla->emitirSonido(); //iden
+
+}
+
+void emitirSonido(Placentario *pla);
+void repaso_despachoDinamico() {
+	cout << "** Despacho dinámico " << endl;
+	Placentario *pla; //el tipo estático de pla es Placentario
+
+	pla = new Placentario();
+	emitirSonido(pla);
+
+	pla = new Perro(); //el tipo dinámico de pla es Perro
+	emitirSonido(pla);
+
+	pla = new Gato();  //el tipo dinámico de pla ed Gato
+	emitirSonido(pla);
+
+}
+
+void emitirSonido(Placentario *pla) {
+	 //acá se produce el despacho dinámico ya que se decide en tiempo de ejecución que
+	//objeto recivirá el mensaje emitirSonido()
+
+	pla->emitirSonido();
+
+	//este código es polifórmico
+}
+

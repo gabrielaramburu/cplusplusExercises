@@ -16,6 +16,7 @@ public:
 	Mamifero();
 	Mamifero(int tamanio);
 	virtual ~Mamifero();
+
 };
 
 #endif /* MAMIFERO_H_ */
