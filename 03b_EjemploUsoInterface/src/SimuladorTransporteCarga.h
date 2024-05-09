@@ -7,7 +7,7 @@
 
 #ifndef SIMULADORTRANSPORTECARGA_H_
 #define SIMULADORTRANSPORTECARGA_H_
-#import "ITransporte.h";
+#include "ITransporte.h";
 
 class SimuladorTransporteCarga {
 private:
