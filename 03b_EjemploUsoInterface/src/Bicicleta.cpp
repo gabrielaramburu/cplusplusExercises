@@ -19,15 +19,17 @@ Bicicleta::~Bicicleta() {
 	// TODO Auto-generated destructor stub
 }
 
+int Bicicleta::calcularDuracion() {
+	cout << "Tiempo de transportar en bicicleta, alto" << endl;
+	return 100;
+}
+
 int Bicicleta::calcularCosto() {
 	cout << "Costo de transportar en bicicleta, bajo" << endl;
 	return 10;
 }
 
-int Bicicleta::calcularDuracion() {
-	cout << "Tiempo de transportar en bicicleta, alto" << endl;
-	return 100;
-}
+
 
 string Bicicleta::descTransporte() {
 	return "Bicicleta";
