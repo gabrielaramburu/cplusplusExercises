@@ -26,10 +26,12 @@ string Sistema::ingresar(string nick, string pass) {
 		if ((*it)->getNick() == nick) {
 			cout << "encontre usuario " << endl;
 
-			if ((*it)->validarContrasenia(pass)) {
-				mensajeRetorno = "*** Bienvenido";
-				break;
-			}
+				if ((*it)->validarContrasenia(pass)) {
+					mensajeRetorno = "*** Bienvenido";
+					break;
+				}
+
+
 		}
 
 	}

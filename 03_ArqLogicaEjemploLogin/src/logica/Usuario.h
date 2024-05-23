@@ -15,6 +15,9 @@ class Usuario {
 private:
 	string nick;
 	string pass;
+
+	int intentosError;
+
 public:
 	Usuario(string nick, string pass);
 	virtual ~Usuario();
@@ -22,6 +25,7 @@ public:
 	string getNick();
 
 	bool validarContrasenia(string pass);
+	bool estaBloqueado();
 
 };
 

@@ -32,3 +32,8 @@ bool Usuario::validarContrasenia(string pass) {
 
 }
 
+bool Usuario::estaBloqueado() {
+	if (this->intentosError > 3) return true;
+	else return false;
+}
+

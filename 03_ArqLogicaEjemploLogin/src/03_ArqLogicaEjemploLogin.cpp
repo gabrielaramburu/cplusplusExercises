@@ -1,10 +1,3 @@
-//============================================================================
-// Name        : 03_ArqLogicaEjemploLogin.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
 
 #include "presentacion/Login.h"
 
