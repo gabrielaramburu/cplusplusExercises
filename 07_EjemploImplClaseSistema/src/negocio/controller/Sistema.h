@@ -29,6 +29,7 @@ public:
 	set<Usuario*> usuarios;
 	set<Idioma*> idiomas;
 
+	Idioma* buscarIdioma(string nomIdioma);
 	static Sistema* getInstance(); //metodo de clase que devuele siempre la misma instancia
 	virtual ~Sistema();
 };

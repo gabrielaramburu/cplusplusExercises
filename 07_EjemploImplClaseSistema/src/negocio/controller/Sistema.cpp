@@ -48,4 +48,15 @@ void Sistema::inicializarDatos() {
 	cout << "Fin inicializacion Sistema " << endl;
 }
 
+Idioma* Sistema::buscarIdioma(string nomIdioma) {
+	Idioma* idioma = nullptr;
+	set<Idioma*>::iterator it;
+	for (it = this->idiomas.begin(); it != this->idiomas.end(); it++) {
+		if ((*it)->getNomIdioma() == nomIdioma) {
+			idioma = (*it);
+			break;
+		}
+	}
+	return idioma;
+}
 

@@ -56,17 +56,17 @@ void IUsuarioController::agregarUsuario(DTOUsuario* usuario) {
 	} else {
 		DTOProfesor* dtoProf = dynamic_cast<DTOProfesor*>(usuario);
 
-		//asumo que es un profesor
+		//si no es un estudiante asumo que es un profesor
 		nuevoUsuario = new Profesor(dtoProf->nick, dtoProf->pass,
 				dtoProf->nom, dtoProf->descrip, dtoProf->instituto);
 
+		//recorro la lista de idiomas del DTO enviado
 		set<string>::iterator it;
 		for (it = dtoProf->idiomas.begin(); it != dtoProf->idiomas.end(); it++) {
-			set<Idioma*>::iterator idioma = this->sistema->idiomas.find(new Idioma("Ingles"));
+			Idioma* idioma = this->sistema->buscarIdioma((*it));
 
-			if (idioma != this->sistema->idiomas.end()) {
-				cout << "encontre idioma " << endl;
-			}
+			(dynamic_cast<Profesor*>(nuevoUsuario))->agregarIdioma((idioma));
+
 		}
 	}
 
