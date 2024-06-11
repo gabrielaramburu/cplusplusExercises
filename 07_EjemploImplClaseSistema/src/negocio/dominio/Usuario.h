@@ -19,8 +19,10 @@ protected:
 
 public:
 	Usuario();
+	Usuario(string nick);
 	virtual ~Usuario();
 	virtual string getNombre();
+	virtual string getNick();
 };
 
 #endif /* NEGOCIO_USUARIO_H_ */

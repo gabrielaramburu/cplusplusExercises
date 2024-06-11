@@ -7,6 +7,7 @@
 
 #include "MenuPpal.h"
 #include "AltaUsuario.h"
+#include "RealizarEjercicio.h"
 #include <iostream>
 
 using namespace std;
@@ -24,7 +25,7 @@ void MenuPpal::mostrarMenu() {
 	do {
 		cout << "*** Menu principal ***" << endl;
 		cout <<"1) Alta Usuario" << endl;
-		cout <<"2) Listar Usuario " << endl;
+		cout <<"2) Realizar Ejercicio " << endl;
 		cout <<"3) Salir " << endl;
 		cout <<"Ingrese una opcion: " << endl;
 
@@ -36,6 +37,10 @@ void MenuPpal::mostrarMenu() {
 			}
 			break;
 		case 2:
+			{
+			RealizarEjercicio realizarEjercicio;
+			realizarEjercicio.realizarEjercicio();
+			}
 			break;
 		case 3:
 			break;

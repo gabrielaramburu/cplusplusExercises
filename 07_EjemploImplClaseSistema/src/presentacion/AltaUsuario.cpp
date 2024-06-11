@@ -34,7 +34,7 @@ void AltaUsuario::altaUsuario() {
 	cin >> nick;
 
 	bool existe = this->iusuario->verificarNick(nick);
-	if (existe) {
+	if (!existe) {
 		cout << "Es estudiante o profesor? (1 estudiante 2 profesor" << endl;
 		int tipoUsuario;
 		DTOUsuario *nuevoUsuario;
@@ -125,21 +125,31 @@ DTOProfesor* AltaUsuario::ingresarProfesor(string nick) {
 
 set<string> AltaUsuario::seleccionarIdiomas() {
 	set<string> idiomasExistentes = this->iusuario->listIdiomas();
+	set<string> idiomasSeleccionados;
+
 	set<string>::iterator it;
 	for (it = idiomasExistentes.begin(); it != idiomasExistentes.end(); it++) {
 		cout << "Idioma: " << *it << endl;
 	}
 	string idioma;
+	bool quiereIngresarIdiomas = true;
 	do {
 		cout << "Ingrese un idioma de la lista: (S/s para salir)" << endl;
 		cin >> idioma;
-		it = idiomasExistentes.find(idioma); //find requiere un puntero
-		if (it != idiomasExistentes.end()) {
-			cout << "Idioma ingresado " << idioma;
+		if (idioma != "S" && idioma != "s") {
+			it = idiomasExistentes.find(idioma);
+			if (it != idiomasExistentes.end()) {
+				//solo selecciono los idiomas que existen
+				idiomasSeleccionados.insert(idioma);
+				cout << "Idioma ingresado: " << idioma  << endl;
+			} else {
+				cout << "El idioma ingresado no existe" << endl;
+			}
 		} else {
-			cout << "El idioma ingresado no existe" << endl;
+			quiereIngresarIdiomas = false;
 		}
-	} while (idioma != "S" && idioma != "s");
 
+	} while (quiereIngresarIdiomas);
+	return idiomasSeleccionados;
 }
 

@@ -5,8 +5,8 @@
  *      Author: gabriel
  */
 
-#ifndef NEGOCIO_CONTROLLER_SISTEMA_H_
-#define NEGOCIO_CONTROLLER_SISTEMA_H_
+#ifndef NEGOCIO_CONTROLLER_SISTEMA_CPP_
+#define NEGOCIO_CONTROLLER_SISTEMA_CPP_
 #include <set>
 #include "../dominio/Usuario.h"
 #include "../dominio/Estudiante.h"
@@ -21,7 +21,7 @@ class Sistema {
 private:
 	Sistema(); //declaro el constructor como privado
 	static Sistema* miSistema;	//puntero a la unica intancia de Sistema
-
+	void inicializarDatos();
 public:
 	//Esta es una clase utilitaria por lo que no tiene sentido encapsular su estado
 	//(no utilizo getters y setters)
@@ -30,8 +30,7 @@ public:
 	set<Idioma*> idiomas;
 
 	static Sistema* getInstance(); //metodo de clase que devuele siempre la misma instancia
-	void inicializarDatos();
 	virtual ~Sistema();
 };
 
-#endif /* NEGOCIO_CONTROLLER_SISTEMA_H_ */
+#endif /* NEGOCIO_CONTROLLER_SISTEMA_CPP_ */

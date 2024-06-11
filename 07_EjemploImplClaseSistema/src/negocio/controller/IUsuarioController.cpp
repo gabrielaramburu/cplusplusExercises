@@ -24,10 +24,12 @@ bool IUsuarioController::verificarNick(string nick) {
 	bool result = false;
 
 	set<Usuario*>::iterator it;
-	cout << "hola1" << endl;
+
 	for (it = this->sistema->usuarios.begin(); it != this->sistema->usuarios.end(); it++) {
-		cout << "hola2" << endl;
-		cout << "hola" << (*it)->getNombre();
+		if (nick == (*it)->getNick()) {
+			result = true;
+			break;
+		}
 	}
 	return result;
 }

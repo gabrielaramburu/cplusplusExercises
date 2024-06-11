@@ -12,10 +12,19 @@ Usuario::Usuario() {
 
 }
 
+Usuario::Usuario(string nick) {
+	this->nick = nick;
+
+}
+
 Usuario::~Usuario() {
 	// TODO Auto-generated destructor stub
 }
 
 string Usuario::getNombre() {
 	return this->nom;
+}
+
+string Usuario::getNick() {
+	return this->nick;
 }

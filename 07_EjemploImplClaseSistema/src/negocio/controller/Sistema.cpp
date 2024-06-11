@@ -16,7 +16,7 @@ Sistema::~Sistema() {
 
 Sistema* Sistema::getInstance() {
 	if (Sistema::miSistema==nullptr){
-		Sistema::miSistema == new Sistema();
+		Sistema::miSistema = new Sistema();
 		Sistema::miSistema->inicializarDatos();
 	}
 	return Sistema::miSistema;
@@ -37,9 +37,7 @@ void Sistema::inicializarDatos() {
 	Idioma *idioma2 = new Idioma("Espaniol");
 	Idioma *idioma3 = new Idioma("Aleman");
 
-	cout << "Fin inicializacion Sistema2 " << endl;
-	Sistema::miSistema->idiomas.insert(idioma1);
-	cout << "Fin inicializacion Sistema3 " << endl;
+	this->idiomas.insert(idioma1);
 	this->idiomas.insert(idioma2);
 	this->idiomas.insert(idioma3);
 
